@@ -1,0 +1,12 @@
+<div class="wrapper">
+    <form class="form-signin" [formGroup]="registerForm" (ngSubmit)="onRegister()">       
+      <h2 class="form-signin-heading">Registrate!</h2>
+      <input type="text" class="form-control" name="username" placeholder="Ingresá tu email" required="" autofocus="" formControlName="email" />
+      <input type="password" class="form-control" name="password" placeholder="Ingresá tu contraseña" required="" formControlName="password"/>      
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Crear cunenta</button> 
+      <br>
+      
+      <a [routerLink]="['/login']"> Ya tenés cuenta? iniciá sesion </a>
+    
+    </form>
+</div>

@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "ppsclase1login": {
+      "hosting": {
+        "tp-sala-juegos": [
+          "ppsclase1login"
+        ]
+      }
+    }
+  }
+}
