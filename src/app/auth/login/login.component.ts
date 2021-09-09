@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
           // this.toast.success('Iniciaste sesion!!', 'Inicias Sesion');
           Swal.fire('Iniciaste sesion!', 'Login exitoso', 'success');
           let f = new Date();
-          this.firestore.crear('logs',{ mensaje:'El usuario '+email+' ha inicado sesion el dia '+f.getDate() + "/" + (f.getMonth() +1) + "/" + f.getFullYear() + ' a las ' + f.getHours()+':'+f.getMinutes()+':'+f.getSeconds()});
+          this.firestore.crear('logs',{ mensaje:'El usuario '+email+' ha inicado sesion', fecha:f.getDate() + "/" + (f.getMonth() +1) + "/" + f.getFullYear() + ' a las ' + f.getHours()+':'+f.getMinutes()+':'+f.getSeconds()});
         }
         else {
           // this.toast.error(user, 'Algo salió mal!');
