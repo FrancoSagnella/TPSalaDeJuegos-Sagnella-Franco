@@ -33,11 +33,9 @@ export class RegisterComponent implements OnInit {
         // usa vez se registro bien, lo guardo en el firestore, asi despues puedo recuperar sus datos para los botones rapidos
           this.firestore.crear('usuarios', {correo:email, clave:password, perfil:'', sexo:'' });
           this.router.navigateByUrl('/home');
-          // this.toast.success('Cuenta creada!!', 'Registrar usuario');
           Swal.fire('Cuenta creada!', 'Registro exitoso', 'success');
         }
         else {
-          // this.toast.error(user, 'Algo salió mal!');
           Swal.fire(user, 'Algo salió mal', 'error');
 
         }

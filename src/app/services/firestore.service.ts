@@ -1,18 +1,26 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FirestoreService {
 
-  constructor(private firestore:AngularFirestore) { }
+  private coleccionMensaje:AngularFirestoreCollection<any>;
+
+  constructor(private firestore:AngularFirestore) {
+    this.coleccionMensaje=firestore.collection<any>('mensajes');
+   }
+
+   guardarMensajeFirestore(datos:any){
+     this.coleccionMensaje.add(datos);
+   }
 
   //Crea un nuevo dato
   public crear(collection: string, data: any) {
     return this.firestore.collection(collection).add(data);
   }
-  //Obtiene un datoS
+  //Obtiene un datos
   public obtenerById(collection:string, documentId: string) {
     return this.firestore.collection(collection).doc(documentId).snapshotChanges();
   }

@@ -47,6 +47,8 @@ export class LoginComponent implements OnInit {
           this.router.navigateByUrl('/home');
           // this.toast.success('Iniciaste sesion!!', 'Inicias Sesion');
           Swal.fire('Iniciaste sesion!', 'Login exitoso', 'success');
+          let f = new Date();
+          this.firestore.crear('logs',{ mensaje:'El usuario '+email+' ha inicado sesion el dia '+f.getDate() + "/" + (f.getMonth() +1) + "/" + f.getFullYear() + ' a las ' + f.getHours()+':'+f.getMinutes()+':'+f.getSeconds()});
         }
         else {
           // this.toast.error(user, 'Algo salió mal!');
@@ -57,6 +59,10 @@ export class LoginComponent implements OnInit {
     {
       console.log(e);
     }
+  }
+
+  guardarMensaje(user:any){
+    this.firestore.guardarMensajeFirestore(user.email + ' inicio sesion a la hora ' + new Date().getDate());
   }
 
   seleccionarUsuario(correo:string, clave:string)
