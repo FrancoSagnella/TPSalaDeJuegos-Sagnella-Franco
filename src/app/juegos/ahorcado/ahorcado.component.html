@@ -1,0 +1,49 @@
+<div>
+    <button *ngIf="this.empezo==false" (click)="comenzarJuego()"> Comenzar Juego</button>
+    <div *ngIf="this.empezo!=false">
+        <h1>Errores hasta el momento: {{erroresCont}}</h1><br>
+        <h1>Puntos totales: {{puntos}}</h1><br>
+        <h1>Palabra:</h1><br>
+        <span *ngFor="let letra of estadoPalabra">
+            <span>{{letra}} </span>
+        </span>
+
+        <div class="teclado">
+                <p>
+                    <a (click)="seleccionarLetra('q')">Q</a>
+                    <a (click)="seleccionarLetra('w')">W</a>
+                    <a (click)="seleccionarLetra('e')">E</a>
+                    <a (click)="seleccionarLetra('r')">R</a>
+                    <a (click)="seleccionarLetra('t')">T</a>
+                    <a (click)="seleccionarLetra('y')">Y</a>
+                    <a (click)="seleccionarLetra('u')">U</a>
+                    <a (click)="seleccionarLetra('i')">I</a>
+                    <a (click)="seleccionarLetra('o')">O</a>
+                    <a (click)="seleccionarLetra('p')">P</a>
+                </p>
+                
+                <p>
+                    <a (click)="seleccionarLetra('a')">A</a>
+                    <a (click)="seleccionarLetra('s')">S</a>
+                    <a (click)="seleccionarLetra('d')">D</a>
+                    <a (click)="seleccionarLetra('f')">F</a>
+                    <a (click)="seleccionarLetra('g')">G</a>
+                    <a (click)="seleccionarLetra('h')">H</a>
+                    <a (click)="seleccionarLetra('j')">J</a>
+                    <a (click)="seleccionarLetra('k')">K</a>
+                    <a (click)="seleccionarLetra('l')">L</a>
+                    <a (click)="seleccionarLetra('ñ')">Ñ</a>
+                </p>
+                
+                <p>
+                    <a (click)="seleccionarLetra('z')">Z</a>
+                    <a (click)="seleccionarLetra('x')">X</a>
+                    <a (click)="seleccionarLetra('c')">C</a>
+                    <a (click)="seleccionarLetra('v')">V</a>
+                    <a (click)="seleccionarLetra('b')">B</a>
+                    <a (click)="seleccionarLetra('n')">N</a>
+                    <a (click)="seleccionarLetra('m')">M</a>
+                </p>
+            </div>
+    </div>
+</div>

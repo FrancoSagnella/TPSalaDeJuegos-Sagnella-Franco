@@ -5,28 +5,33 @@
       <div class="jumbotron">
         <div class="container">
           <h1 class="display-3">Bienvenido a la sala de juegos de Franco Sagnella!</h1>
-          <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-          <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+          <p></p>
+          <p><a class="btn btn-primary btn-lg" [routerLink]="['/chat']" role="button">Sala de chat &raquo;</a></p>
         </div>
       </div>
 
       <div class="container">
         <!-- Example row of columns -->
         <div class="row">
-          <div class="col-md-4">
+          <div class="col-md-3">
             <h2>Ahorcado</h2>
             <p></p>
-            <p><a class="btn btn-secondary" href="#" role="button">Jugar &raquo;</a></p>
+            <p><a class="btn btn-secondary" [routerLink]="['/juegos/ahorcado']" role="button">Jugar &raquo;</a></p>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-3">
             <h2>Mayor o Menor</h2>
             <p></p>
-            <p><a class="btn btn-secondary" href="#" role="button">Jugar &raquo;</a></p>
+            <p><a class="btn btn-secondary" [routerLink]="['/juegos/mayormenor']" role="button">Jugar &raquo;</a></p>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-3">
             <h2>Preguntados</h2>
             <p></p>
-            <p><a class="btn btn-secondary" href="#" role="button">Jugar &raquo;</a></p>
+            <p><a class="btn btn-secondary" [routerLink]="['/juegos/preguntados']" role="button">Jugar &raquo;</a></p>
+          </div>
+          <div class="col-md-3">
+            <h2>Juego Propio</h2>
+            <p></p>
+            <p><a class="btn btn-secondary" [routerLink]="['/juegos/otroJuego']" role="button">Jugar &raquo;</a></p>
           </div>
         </div>
 
@@ -36,9 +41,6 @@
 
     </main>
 
-    <footer class="container">
-      <p>&copy; Company 2017-2018</p>
-    </footer>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

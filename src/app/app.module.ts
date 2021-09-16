@@ -9,6 +9,10 @@ import { environment } from 'src/environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
+import { AhorcadoComponent } from './juegos/ahorcado/ahorcado.component';
+import { MayormenorComponent } from './juegos/mayormenor/mayormenor.component';
+import { FormsModule } from '@angular/forms';
+import { ChatComponent } from './chat/chat.component';
 
 //import { ToastrService } from 'ngx-toastr';
 
@@ -17,14 +21,18 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
   declarations: [
     AppComponent,
     NavbarComponent,
+    AhorcadoComponent,
+    MayormenorComponent,
+    ChatComponent,
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     AngularFirestoreModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

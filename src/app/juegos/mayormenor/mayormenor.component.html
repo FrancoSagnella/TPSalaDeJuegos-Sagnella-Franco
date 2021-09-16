@@ -1,0 +1,17 @@
+<div>
+    <button *ngIf="this.empezo==false; else gameBlock" (click)="comenzarJuego()"> Comenzar Juego</button>
+    <ng-template #gameBlock>
+        <h1>Puntos totales: {{puntos}}</h1>
+        <h1>Errores totalse: {{erroresCont}}</h1>
+        <h1>Palabra:</h1>
+        <span>
+            <img src="../../../assets/cartas/Dorso.png">
+        </span>
+        <span>
+            <img src={{imagenUrl}}>
+        </span><br>
+        <button (click)="elegirBoton('menor')"> Menor</button>
+        <button (click)="elegirBoton('igual')"> Igual</button>
+        <button (click)="elegirBoton('mayor')"> Mayor</button>
+    </ng-template>
+</div>

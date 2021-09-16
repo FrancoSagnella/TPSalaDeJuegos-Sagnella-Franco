@@ -45,13 +45,11 @@ export class LoginComponent implements OnInit {
         const user = await this.authSvc.login(email, password);
         if(typeof(user) !== 'string'){
           this.router.navigateByUrl('/home');
-          // this.toast.success('Iniciaste sesion!!', 'Inicias Sesion');
           Swal.fire('Iniciaste sesion!', 'Login exitoso', 'success');
           let f = new Date();
           this.firestore.crear('logs',{ mensaje:'El usuario '+email+' ha inicado sesion', fecha:f.getDate() + "/" + (f.getMonth() +1) + "/" + f.getFullYear() + ' a las ' + f.getHours()+':'+f.getMinutes()+':'+f.getSeconds()});
         }
         else {
-          // this.toast.error(user, 'Algo salió mal!');
           Swal.fire(user, 'Algo salió mal', 'error');
         }      
     }

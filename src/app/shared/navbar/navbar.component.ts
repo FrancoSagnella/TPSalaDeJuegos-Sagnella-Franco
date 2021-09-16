@@ -20,7 +20,7 @@ export class NavbarComponent {
   async onLogout() {
     try{
       await this.authSvc.logout();
-      this.router.navigateByUrl('/login');
+      this.router.navigateByUrl('/auth/login');
     }
     catch(e:any){
       console.log(e)
