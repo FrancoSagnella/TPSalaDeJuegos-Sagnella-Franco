@@ -1,0 +1,35 @@
+.true {
+    color: white;
+    text-align: center;
+    line-height: 1.1;
+    background-color: rgb(59, 165, 59);
+    margin: 0;
+    font-weight: normal;
+    text-transform: uppercase;
+    padding: 20px 0;
+ }
+ .false {
+    color: white;
+    text-align: center;
+    line-height: 1.1;
+    background-color: rgb(189, 58, 58);
+    margin: 0;
+    font-weight: normal;
+    text-transform: uppercase;
+    padding: 20px 0;
+ }
+ .colorDisplay {
+    font-size: 130%;
+ }	
+
+ .square {
+    width: 30%;
+    background: purple;
+    padding-bottom: 30%;
+    float: left;
+    margin: 1.66%;
+    border-radius: 15%;
+    transition: background-color 0.6s;
+    -webkit-transition: background-color 0.6s;
+    -moz-transition: background-color 0.6s;
+ }

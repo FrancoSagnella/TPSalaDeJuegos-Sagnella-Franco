@@ -1,0 +1,57 @@
+<!-- <p>{{nombreJuego}}</p>
+<h1>{{mensaje}}</h1>
+<h1>{{puntos}}</h1>
+<h1>{{errores}}</h1> -->
+
+<h1 *ngIf="resultado==true" class="true">{{nombreJuego}}<br><span class="colorDisplay">Juego terminado</span></h1>
+<h1 *ngIf="resultado==false" class="false">{{nombreJuego}}<br><span class="colorDisplay">Juego terminado</span></h1>
+
+<div class="container" *ngIf="nombreJuego == 'ahorcado'" style="text-align: center;">
+    <div class="row">
+        <div class="col">
+            <img *ngIf="resultado==false" src="../../../assets/horca/6.png" alt="" width="300px" height="300px" >
+            <img *ngIf="resultado==true" src="../../../assets/horca/0.png" alt="" width="300px" height="300px" >
+        </div>
+        <div class="col" style="margin-top: 50px;">
+            <h1 class="display-5">{{mensaje}}</h1>
+            <hr>
+            <h1 class="display-3">Puntaje total: {{puntos}}</h1>
+        </div>
+    </div>
+</div>
+
+<div class="container" *ngIf="nombreJuego == 'Mayor o Menor?'">
+    <div class="row">
+        <div class="col" style="text-align: center;">
+            <img src="../../../assets/cartas/1Oro.png" alt="" >
+        </div>
+        <div class="col" style="margin-top: 50px;">
+            <h1 class="display-5">{{mensaje}}</h1>
+            <hr>
+            <h1 class="display-3">Puntaje total: {{puntos}}</h1>
+        </div>
+    </div>
+</div>
+
+<div class="container" *ngIf="nombreJuego == 'colores'">
+    <div class="row">
+        <div class="col" style="margin-top: 100px; margin-bottom: 65px; text-align: center;" >
+            <div class="square"></div>
+        </div>
+        <div class="col" style="margin-top: 50px;">
+            <h1 class="display-5">{{mensaje}}</h1>
+            <hr>
+            <h1 class="display-3">Puntaje total: {{puntos}}</h1>
+        </div>
+    </div>
+</div>
+
+<div class="container" *ngIf="nombreJuego == 'preguntados'">
+
+</div>
+
+<hr>
+<div style="text-align: center; margin-top: 50px;">
+    <button class="btn btn-secondary" (click)="volverAJugar()">Volver a jugar</button>
+    <a class="btn btn-secondary" style="margin-left: 10px;" [routerLink]="['/home']">Volver a home</a>
+</div>

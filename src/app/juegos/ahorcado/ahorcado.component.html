@@ -1,49 +1,63 @@
-<div>
-    <button *ngIf="this.empezo==false" (click)="comenzarJuego()"> Comenzar Juego</button>
-    <div *ngIf="this.empezo!=false">
-        <h1>Errores hasta el momento: {{erroresCont}}</h1><br>
-        <h1>Puntos totales: {{puntos}}</h1><br>
-        <h1>Palabra:</h1><br>
-        <span *ngFor="let letra of estadoPalabra">
-            <span>{{letra}} </span>
-        </span>
+<div *ngIf="terminado==false; else final">
+    <div *ngIf="this.empezo==false">
+        <h1 class="h1">Ahorcado<br><span class="colorDisplay">Reglas del juego</span></h1>
+        <div class="container">
+            <div class="row">
 
-        <div class="teclado">
-                <p>
-                    <a (click)="seleccionarLetra('q')">Q</a>
-                    <a (click)="seleccionarLetra('w')">W</a>
-                    <a (click)="seleccionarLetra('e')">E</a>
-                    <a (click)="seleccionarLetra('r')">R</a>
-                    <a (click)="seleccionarLetra('t')">T</a>
-                    <a (click)="seleccionarLetra('y')">Y</a>
-                    <a (click)="seleccionarLetra('u')">U</a>
-                    <a (click)="seleccionarLetra('i')">I</a>
-                    <a (click)="seleccionarLetra('o')">O</a>
-                    <a (click)="seleccionarLetra('p')">P</a>
-                </p>
-                
-                <p>
-                    <a (click)="seleccionarLetra('a')">A</a>
-                    <a (click)="seleccionarLetra('s')">S</a>
-                    <a (click)="seleccionarLetra('d')">D</a>
-                    <a (click)="seleccionarLetra('f')">F</a>
-                    <a (click)="seleccionarLetra('g')">G</a>
-                    <a (click)="seleccionarLetra('h')">H</a>
-                    <a (click)="seleccionarLetra('j')">J</a>
-                    <a (click)="seleccionarLetra('k')">K</a>
-                    <a (click)="seleccionarLetra('l')">L</a>
-                    <a (click)="seleccionarLetra('ñ')">Ñ</a>
-                </p>
-                
-                <p>
-                    <a (click)="seleccionarLetra('z')">Z</a>
-                    <a (click)="seleccionarLetra('x')">X</a>
-                    <a (click)="seleccionarLetra('c')">C</a>
-                    <a (click)="seleccionarLetra('v')">V</a>
-                    <a (click)="seleccionarLetra('b')">B</a>
-                    <a (click)="seleccionarLetra('n')">N</a>
-                    <a (click)="seleccionarLetra('m')">M</a>
-                </p>
+                <div class="col">
+                    <img src="../../../assets/horca/0.png" width="340px" height="340px">
+                </div>
+        
+                <div class="col">
+                    <p style="margin-top: 50px;">El jugador deberá adivinar palabras eligiendo las letras que las componen, cada acierto irá completando la palabra mientras que cada error dibujará al ahorcado. 
+                        Si el ahorcado termina de dibujarse, el jugador perderá. 
+                        Cada palabra que el jugador complete, sumará un punto. El total de puntos a obtener serán 10.
+                    </p>
+                    <h1 class="display-3">Buena suerte!!</h1>
+                </div>
+
             </div>
+            <hr>
+            <div style="text-align: center;">
+                <button style="text-align: center; margin-top: 30px;" class="btn btn-secondary" (click)="comenzarJuego()"> Comenzar Juego</button>
+                <a class="btn btn-secondary" style="margin-left: 10px; margin-top: 30px;" [routerLink]="['/home']">Volver a home</a>
+            </div>
+
+        </div>
+    </div>
+    <div *ngIf="this.empezo!=false">
+        <h1 class="h1">Ahorcado<br><span class="colorDisplay">Adivina las palabras</span></h1>
+
+        <div class="stripe">
+            <span class="message">Puntaje: {{puntos}}</span>
+        </div>
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col">
+                    <img src="../../../assets/horca/{{erroresCont}}.png" width="340px" height="340px">
+                </div>
+        
+                <div class="col palabraContainer" >
+                    <span *ngFor="let letra of estadoPalabra">
+                        <span >{{letra}} </span>
+                    </span>
+                </div>
+
+            </div>
+            <div class="row">
+
+                <div class="col botonera">
+                    <button type="button" class="btn btn-primary" *ngFor="let boton of botones" (click)="seleccionarLetra(boton)" [disabled]="boton.presionado" [ngClass]="boton.estado">{{boton.letra}}</button>
+                </div>
+
+            </div>
+        </div>
+
     </div>
 </div>
+
+<ng-template #final>
+    <app-final [nombreJuego]="'ahorcado'" [errores]="erroresCont" [puntos]="puntos" [mensaje]="mensajeFinal" [resultado]="resultado" (reiniciarJuego)="reiniciarJuego()"></app-final>
+</ng-template>

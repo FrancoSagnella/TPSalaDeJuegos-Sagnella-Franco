@@ -11,6 +11,9 @@ import { listaCartas } from '../juegos-constantes';
 export class MayormenorComponent implements OnInit {
 
   empezo:boolean;
+  terminado:boolean = false;
+  mensajeFinal:string = '';
+  resultado:boolean = false;
 
   cartasUsar:Carta[] = [];
   ultimaCarta:any;
@@ -38,6 +41,8 @@ export class MayormenorComponent implements OnInit {
     console.info(listaCartas);
     this.robar();
     this.empezo = true;
+    this.puntos = 0;
+    this.erroresCont = 0;
   }
 
   mezclar(array:any) {
@@ -56,8 +61,10 @@ export class MayormenorComponent implements OnInit {
     }
     else
     {
-      Swal.fire('Termino el juego!', 'Se robaron todas las cartas', 'success');
-      this.terminarJuego()
+      // Swal.fire('Termino el juego!', 'Se robaron todas las cartas', 'success');
+      this.mensajeFinal = 'Se robaron todas las cartas!';
+      this.resultado = true;
+      this.terminarJuego();
     }
   }
 
@@ -101,7 +108,9 @@ export class MayormenorComponent implements OnInit {
     this.erroresCont++;
     if(this.erroresCont >= 10)
     {
-      Swal.fire('Perdiste!', 'Llegaste al maximo de errores tu puntuacion final es: '+this.puntos, 'error');
+      // Swal.fire('Perdiste!', 'Llegaste al maximo de errores tu puntuacion final es: '+this.puntos, 'error');
+      this.mensajeFinal = 'Llegaste al maximo de errores permitidos!';
+      this.resultado = false;
       this.terminarJuego();
     }
     else
@@ -117,7 +126,11 @@ export class MayormenorComponent implements OnInit {
 
   terminarJuego() {
     this.empezo = false;
-    this.puntos = 0;
-    this.erroresCont = 0;
+    this.terminado = true;
   }
+
+  reiniciarJuego() {
+    this.terminado = false;
+  }
+
 }

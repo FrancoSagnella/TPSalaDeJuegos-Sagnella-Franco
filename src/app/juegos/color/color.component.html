@@ -1,0 +1,64 @@
+<div *ngIf="terminado==false;else final">
+    <div *ngIf="this.empezo==false;else juego">
+        <h1>Encuentra el Color <br><span id="colorDisplay">Reglas del juego</span><br></h1>
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col" style="margin-top: 100px; margin-bottom: 65px; text-align: center;" >
+                    <div class="square"></div>
+                    <button *ngIf="dif=='facil';else noFacil" class="button-selected btn btn-secondary" (click)="elegirDificultad('facil')">Fácil</button>
+                    <button *ngIf="dif=='normal';else noNormal"  class="button-selected btn btn-secondary"  (click)="elegirDificultad('normal')">Normal</button>
+                    <button *ngIf="dif=='dificil';else noDificil" class="button-selected btn btn-secondary"  (click)="elegirDificultad('dificil')">Difícil</button>
+                
+                    <ng-template #noFacil>
+                        <button  class="button btn btn-secondary" (click)="elegirDificultad('facil')">Fácil</button>
+                    </ng-template>
+                    <ng-template #noNormal>
+                        <button  class="button btn btn-secondary" (click)="elegirDificultad('normal')">Normal</button>
+                    </ng-template>
+                    <ng-template #noDificil>
+                        <button  class="button btn btn-secondary" (click)="elegirDificultad('dificil')">Difícil</button>
+                    </ng-template>
+                </div>
+        
+                <div class="col">
+                    <p style="margin-top: 50px;">Al jugador se le mostrará el codigo de un color en RGB y distintos recuadros pintados de diferentes colores. 
+                        Uno de esos colores es el color RGB mostrado arriba. Se deberá hacer click sobre los colores para elegirlos. En caso de elegir el color correcto se sumará un punto,
+                        en caso de elegir un color erróneo este desaparecerá de la pantalla, reduciendo las opciones. 
+                        El numero de recuadros entre los que se podran elegir dependerán de la dificultad seleccionada. 
+                        El juego terminará al conseguir 10 puntos, o al acumular 10 errores
+                    </p>
+                    <p class="display-3">Buena suerte!!</p>
+                </div>
+
+            </div>
+
+            <hr>
+            <div style="text-align: center;">
+                <button style="text-align: center; margin-top: 10px; margin-bottom: 10px;" class="btn btn-secondary" (click)="comenzarJuego()"> Comenzar Juego</button>
+                <a class="btn btn-secondary" style="margin-left: 10px; margin-top: 10px; margin-bottom: 10px;" [routerLink]="['/home']">Volver a home</a>
+            </div>
+
+        </div>
+    </div>
+
+    <ng-template #juego>
+        <h1>Encuentra el Color <br><span id="colorDisplay">{{colorActual}}</span><br></h1>
+    
+       <div class="stripe" style="margin-top: 10px;">
+          <span id="message">Errores: {{errores}}</span>
+          <button *ngIf="siguienteRonda==true" class="btn btn-secondary" id="newGame" (click)="nuevaRonda()">{{siguienteRondaMsj}}</button>
+          <span id="message">Puntaje: {{rondas}}</span>
+       </div>
+    
+       <div id="container">
+          <div class="square" *ngFor="let cuadrado of colores; let i = index" style="background-color: {{cuadrado}};" (click)="seleccionarColor(cuadrado, i)">{{cuadrado}}</div>
+       </div>
+    </ng-template>
+
+</div>
+
+<ng-template #final>
+    <app-final [nombreJuego]="'colores'" [puntos]="rondas" [errores]="errores" [mensaje]="mensajeFinal" [resultado]="resultado" (reiniciarJuego)="reiniciarJuego()"></app-final>
+</ng-template>

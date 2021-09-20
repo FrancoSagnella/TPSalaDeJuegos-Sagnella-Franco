@@ -13,6 +13,7 @@ import { AhorcadoComponent } from './juegos/ahorcado/ahorcado.component';
 import { MayormenorComponent } from './juegos/mayormenor/mayormenor.component';
 import { FormsModule } from '@angular/forms';
 import { ChatComponent } from './chat/chat.component';
+import { QuienSoyComponent } from './quien-soy/quien-soy.component';
 
 //import { ToastrService } from 'ngx-toastr';
 
@@ -21,9 +22,8 @@ import { ChatComponent } from './chat/chat.component';
   declarations: [
     AppComponent,
     NavbarComponent,
-    AhorcadoComponent,
-    MayormenorComponent,
     ChatComponent,
+    QuienSoyComponent,
   ],
   imports: [
     BrowserModule,

@@ -5,6 +5,7 @@ import { AhorcadoComponent } from './ahorcado/ahorcado.component';
 import { MayormenorComponent } from './mayormenor/mayormenor.component';
 import { AuthGuard } from '../services/auth.guard';
 import { PreguntadosComponent } from './preguntados/preguntados.component';
+import { ColorComponent } from './color/color.component';
 
 // const redirectUnauthorizedToLogin = () =>
 //   redirectUnauthorizedTo(['auth/login']);
@@ -19,6 +20,9 @@ const routes: Routes = [
   { 
     path: 'preguntados', 
     component: PreguntadosComponent, canActivate: [AuthGuard] },
+  {
+    path: 'colores',
+    component:ColorComponent, canActivate: [AuthGuard] },
   ];
 
 @NgModule({
