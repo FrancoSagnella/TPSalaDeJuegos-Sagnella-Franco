@@ -1,6 +1,6 @@
 <div *ngIf="terminado==false;else final">
     <div *ngIf="this.empezo==false;else juego">
-        <h1>Encuentra el Color <br><span id="colorDisplay">Reglas del juego</span><br></h1>
+        <h1>¿Que color es? <br><span id="colorDisplay">Reglas del juego</span><br></h1>
 
         <div class="container">
             <div class="row">
@@ -44,7 +44,7 @@
     </div>
 
     <ng-template #juego>
-        <h1>Encuentra el Color <br><span id="colorDisplay">{{colorActual}}</span><br></h1>
+        <h1>¿Que color es?<br><span id="colorDisplay">{{colorActual}}</span><br></h1>
     
        <div class="stripe" style="margin-top: 10px;">
           <span id="message">Errores: {{errores}}</span>
@@ -60,5 +60,5 @@
 </div>
 
 <ng-template #final>
-    <app-final [nombreJuego]="'colores'" [puntos]="rondas" [errores]="errores" [mensaje]="mensajeFinal" [resultado]="resultado" (reiniciarJuego)="reiniciarJuego()"></app-final>
+    <app-final [nombreJuego]="'¿Que color es?'" [puntos]="rondas" [errores]="errores" [mensaje]="mensajeFinal" [resultado]="resultado" (reiniciarJuego)="reiniciarJuego()"></app-final>
 </ng-template>

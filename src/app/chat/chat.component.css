@@ -12,18 +12,13 @@
   }
   
   .chat {
-    position: absolute;
-    top: 53%;
-    left: 50%;
-    right: 0;
-    bottom: 0;
-    margin: auto;
+    position: relative;
     width: 500px;
-    height: 700px;
+    height: 200%;
     color: black;
   
-    margin-top: auto;
-    margin-bottom: auto;
+     margin-top: auto;
+    margin-bottom: auto; 
   }
   
   .card {
@@ -56,7 +51,7 @@
   
   .msg_time {
     position: absolute;
-    left: 0;
+    left: 30px;
     bottom: -15px;
     color: rgba(0, 0, 0, 0.5);
     font-size: 10px;
@@ -72,7 +67,7 @@
   
   .msg_time_send {
     position: absolute;
-    right: 110px;
+    right: 0px;
     bottom: -15px;
     color: rgba(0, 0, 0, 0.5);
     font-size: 10px;
@@ -91,11 +86,58 @@
   .msg_container_from {
     right: 0;
     bottom: -15px;
-    color: rgba(0, 0, 0, 0.5);
-    font-size: 10px;
+    color: rgb(21, 119, 34);
+    font-size: 15px;
+  }
+
+  .msg_container_otro {
+    right: 0;
+    bottom: -15px;
+    color: steelblue;
+    font-size: 15px;
   }
   
   .input-group-append{
     background-color: #daeedf;
   }
   
+  .scroll {
+    height: 83vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+
+  .mensaje-mio {
+    color: royalblue;
+  }
+  
+  .right{
+    display: inline;
+    float: right;
+  }
+  
+  .left{
+    align-items:flex-start;
+  }
+  
+  .text-area{
+    position: absolute; bottom: 0;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  
+
+
+  p{
+    width: 200px;
+    border: 1px solid;
+    padding: 2px 5px;
+  
+    /* BOTH of the following are required for text-overflow */
+    white-space: nowrap;
+    overflow: hidden;
+  }
+    .overflow-visible{
+    white-space: initial;
+  }

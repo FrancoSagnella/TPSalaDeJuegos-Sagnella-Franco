@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { ChatService } from '../services/chat.service';
 import { Mensaje } from './mensaje';
@@ -15,6 +15,7 @@ export class ChatComponent implements OnInit {
   mensaje:Mensaje = {mensaje:'', usuario:'', fecha:'', hora:''};
 
   chat:any[] = [];
+  @ViewChild('scrollMe') private listadoMensajes!: ElementRef;
 
   constructor(private chatService:ChatService, private authSvc:AuthService, private firestore:FirestoreService) {
     this.gaurdarUsuario();
@@ -35,6 +36,13 @@ export class ChatComponent implements OnInit {
       })
     });
   }
+  ngAfterViewChecked() {
+    this.scrollear();
+  }
+
+  scrollear() {
+    this.listadoMensajes.nativeElement.scrollTop = this.listadoMensajes.nativeElement.scrollHeight;
+  }
 
   async send()
   {
@@ -43,9 +51,8 @@ export class ChatComponent implements OnInit {
     this.mensaje.fecha = date.getFullYear() + '-' + (date.getMonth()+1) + '-' + date.getDate();
     this.mensaje.hora = date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
 
-    console.info(this.mensaje);
-    console.info(this.chat);
-    // this.chatService.createOne(this.mensaje, 'chat');
     this.firestore.crear('chat', {fecha:this.mensaje.fecha, hora:this.mensaje.hora, usuario:this.mensaje.usuario, mensaje:this.mensaje.mensaje });
+
+    this.mensaje.mensaje = '';
   }
 }
