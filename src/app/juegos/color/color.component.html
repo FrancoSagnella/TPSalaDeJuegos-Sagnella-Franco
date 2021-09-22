@@ -51,9 +51,9 @@
           <button *ngIf="siguienteRonda==true" class="btn btn-secondary" id="newGame" (click)="nuevaRonda()">{{siguienteRondaMsj}}</button>
           <span id="message">Puntaje: {{rondas}}</span>
        </div>
-    
+       <hr>
        <div id="container">
-          <div class="square" *ngFor="let cuadrado of colores; let i = index" style="background-color: {{cuadrado}};" (click)="seleccionarColor(cuadrado, i)">{{cuadrado}}</div>
+          <div class="square" *ngFor="let cuadrado of colores; let i = index" style="background-color: {{cuadrado}};" (click)="seleccionarColor(cuadrado, i)"></div>
        </div>
     </ng-template>
 

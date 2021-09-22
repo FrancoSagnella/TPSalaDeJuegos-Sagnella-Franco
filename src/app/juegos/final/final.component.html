@@ -47,10 +47,21 @@
 </div>
 
 <div class="container" *ngIf="nombreJuego == 'preguntados'">
-
+    <div class="row">
+        <div class="col" style="text-align: center; margin-top: 30px;">
+            <img src="../../../assets/preguntados-logo.jpg" width="250px" height="250px">
+        </div>
+        <div class="col" style="margin-top: 50px;">
+            <h1 class="display-5">{{mensaje}}</h1>
+            <hr>
+            <h1 class="display-3">Puntaje total: {{puntos}}</h1>
+            <h1 class="display-3">Errores totales: {{errores}}</h1>
+        </div>
+    </div>
 </div>
 
 <hr>
+
 <div style="text-align: center; margin-top: 50px;">
     <button class="btn btn-secondary" (click)="volverAJugar()">Volver a jugar</button>
     <a class="btn btn-secondary" style="margin-left: 10px;" [routerLink]="['/home']">Volver a home</a>

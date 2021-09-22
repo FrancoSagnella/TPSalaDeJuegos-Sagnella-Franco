@@ -1,0 +1,49 @@
+.h1 {
+    color: white;
+    text-align: center;
+    line-height: 1.1;
+    background-color: steelblue;
+    margin: 0;
+    font-weight: normal;
+    text-transform: uppercase;
+    padding: 20px 0;
+ }
+ .colorDisplay {
+    font-size: 130%;
+ }	
+ .message{
+    display: inline-block;
+    width: 20%;
+ }
+ .stripe {
+   background-color: white;
+   height: 30px;
+   text-align: center;
+   margin-bottom: 30px; 
+}
+
+.bien{
+   background-color: green;
+}
+.mal{
+   background-color: rgb(161, 44, 44);
+}
+
+.preguntaContainer{
+   /* width: 50%; */
+   background: steelblue;
+   padding-bottom: 50px;
+   float: left;
+   margin: 1.66%;
+   border-radius: 15%;
+}
+
+
+.palabraContainer{
+   /* width: 30%; */
+   background: #343a40;
+   padding-bottom: 50px;
+   float: left;
+   margin: 1.66%;
+   border-radius: 15%;
+}

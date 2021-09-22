@@ -1,4 +1,5 @@
 import { Carta } from "./clases/carta";
+import { Pregunta } from "./clases/pregunta";
 
 export const palabras:string[] = ['Camion', 'Perro', 'Arbol', 'Diversion', 'Entumecido', 'Manga', 'Pimienta',
                       'Segundos', 'Ventilador', 'Larva'];
@@ -26,4 +27,10 @@ export const listaCartas:Carta[] = [{palo: 'oro', numero: 1, imagenUrl: '../../.
 export const abecedario:string[] = ["A", "B", "C", "D", "E", "F", "G",
                                     "H", "I", "J", "K", "L", "M", "N",
                                     "Ñ", "O", "P", "Q", "R", "S", "T",
-                                    "U", "V", "W", "X", "Y", "Z"]
+                                    "U", "V", "W", "X", "Y", "Z"];
+
+export const preguntas:Pregunta[] = [{pregunta:'¿Cuanto es 2+2?', opcion1:'2', opcion2:'4',opcion3:'6',opcion4:'8',opcionCorrecta:'4', tematica:'matematicas', opcionPiola:'2'},
+                      {pregunta:'¿Cuanto es 3+3?', opcion1:'3', opcion2:'9',opcion3:'6',opcion4:'12',opcionCorrecta:'6', tematica:'matematicas', opcionPiola:'3'},
+                      {pregunta:'¿Cuanto es 4+4?', opcion1:'12', opcion2:'24',opcion3:'6',opcion4:'8',opcionCorrecta:'8', tematica:'matematicas', opcionPiola:'4'},
+                      {pregunta:'¿Cuanto es 5+5?', opcion1:'10', opcion2:'4',opcion3:'15',opcion4:'25',opcionCorrecta:'10', tematica:'matematicas', opcionPiola:'1'},
+                      {pregunta:'¿Cuanto es 6+6?', opcion1:'6', opcion2:'66',opcion3:'12',opcion4:'8',opcionCorrecta:'12', tematica:'matematicas', opcionPiola:'3'},]

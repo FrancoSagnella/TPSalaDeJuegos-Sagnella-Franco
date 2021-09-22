@@ -8,46 +8,49 @@
         <button (click)="send()">Enviar mensaje</button>
     </div>
 </div> -->
-<div class="col-md-8 col-xl-6 chat">
-    <div class="card">
-      <div class="card-body msg_card_body">
-        <div *ngFor="let mensaje of chat">
-          <div *ngIf="mensaje.data.usuario == user.email">
-            <div class="d-flex justify-content-end mb-4">
-              <div class="msg_container_send">
-                <span class="msg_container_from">{{ mensaje.data.usuario }}</span
-                ><br />
-                {{ mensaje.data.mensaje }}
-                <span class="msg_time_send">{{ mensaje.data.hora }}</span>
+
+<div class="innerDiv">
+  <div class="col-md-8 col-xl-6 chat">
+      <div class="card">
+        <div class="card-body msg_card_body">
+          <div *ngFor="let mensaje of chat">
+            <div *ngIf="mensaje.data.usuario == user.email">
+              <div class="d-flex justify-content-end mb-4">
+                <div class="msg_container_send">
+                  <span class="msg_container_from">{{ mensaje.data.usuario }}</span
+                  ><br />
+                  {{ mensaje.data.mensaje }}
+                  <span class="msg_time_send">{{ mensaje.data.hora }}</span>
+                </div>
               </div>
             </div>
-          </div>
-          <div *ngIf="mensaje.data.usuario != user.email">
-            <div class="d-flex justify-content-start mb-4">
-              <div class="msg_container">
-                <span class="msg_container_from">{{ mensaje.data.usuario }}</span
-                ><br />
-                {{ mensaje.data.mensaje }}
-                <span class="msg_time">{{ mensaje.data.hora }}</span>
+            <div *ngIf="mensaje.data.usuario != user.email">
+              <div class="d-flex justify-content-start mb-4">
+                <div class="msg_container">
+                  <span class="msg_container_from">{{ mensaje.data.usuario }}</span
+                  ><br />
+                  {{ mensaje.data.mensaje }}
+                  <span class="msg_time">{{ mensaje.data.hora }}</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-  
-      <div class="input-group mb-3">
-        <input
-          type="text"
-          class="form-control"
-          placeholder="Type.."
-          [(ngModel)]="mensaje.mensaje"
-        />
-        <div class="input-group-append">
-          <button class="btn btn-outline-success" type="button" (click)="send()">
-            <div class="sendText">Send</div>
-          </button>
+    
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Type.."
+            [(ngModel)]="mensaje.mensaje"
+          />
+          <div class="input-group-append">
+            <button class="btn btn-outline-success" type="button" (click)="send()">
+              <div class="sendText">Send</div>
+            </button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+</div>
   

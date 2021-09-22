@@ -40,8 +40,8 @@ export class ChatComponent implements OnInit {
   {
     let date:Date = new Date();
     this.mensaje.usuario =  this.user.email;
-    this.mensaje.fecha = date.getFullYear() + '-' + date.getMonth() + '-' + date.getDay();
-    this.mensaje.hora = date.getHours() + ':' + date.getMinutes();
+    this.mensaje.fecha = date.getFullYear() + '-' + (date.getMonth()+1) + '-' + date.getDate();
+    this.mensaje.hora = date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
 
     console.info(this.mensaje);
     console.info(this.chat);

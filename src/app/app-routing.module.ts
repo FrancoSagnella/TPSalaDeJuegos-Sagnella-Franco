@@ -27,7 +27,6 @@ const routes: Routes = [
 {
   path: 'quien-soy',
   component: QuienSoyComponent  }
-
 ];
 
 @NgModule({

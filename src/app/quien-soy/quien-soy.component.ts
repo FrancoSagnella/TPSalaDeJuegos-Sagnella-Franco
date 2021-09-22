@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuienSoyComponent implements OnInit {
 
+  seccion?: string;
+
   constructor() { }
 
   ngOnInit(): void {
+    this.setSeccion("descripcion");
   }
 
+  setSeccion(seccion: string){
+    this.seccion = seccion;
+  }
 }

@@ -1,1 +1,71 @@
-<p>quien-soy works!</p>
+<body>
+    <main role="main">
+
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h1 class="display-3">Sobre mí</h1>
+                    <p>Hola! Soy Franco Sagnella, tengo 19 años y soy estudiante de la carrera "Tecnicatura Universitaria en Programacion", en la Universidad Tecnologica Nacional.
+                        Esta misma aplicacion forma parte de una ejercitacion práctica para la materia Laboratorio 4, en donde se presentan una serie de juegos para desafiar a los usuarios
+                        y evaluar sus capacidades. Que lo disfruten!
+                    </p>
+                    <hr>
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <a class="btn btn-light" href="https://github.com/FrancoSagnella" target="_blank"> GitHub personal</a>
+                        <a class="btn btn-light" href="https://github.com/FrancoSagnella/TPSalaDeJuegos-Sagnella-Franco" target="_blank"> Repositorio de la aplicacion</a>
+                    </div>
+                    <br><hr>
+                     <p><a class="btn btn-secondary" [routerLink]="['/']" role="button">Ir a jugar! &raquo;</a></p>
+                    <!-- <a href="https://github.com/FrancoSagnella" target="_blank" class="btn btn-light"><i class="bi bi-github"></i> GitHub personal</a>
+                    <a href="https://github.com/FrancoSagnella/TPSalaDeJuegos-Sagnella-Franco" target="_blank" ><i class="bi bi-github"></i> Repositorio de la aplicación</a> -->
+                </div>
+                <div class="col">
+                    <img class="foto" src="../../assets/franco.jpg" alt="">
+                </div>
+            </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+          <div class="col">
+            <h1 class="display-3">Detalles del juego propio</h1>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col" style="text-align: center;">
+              <h1 class="display-5">¿Que color es?</h1>
+              <br>
+              <p style="font-size:large;">El juego se titula ¿Que color es?, sus reglas son sencillas y su diseño interesante.
+                  La idea de este juego surgió de elegir colores para estilos en CSS. Al usar los codigos RGB de los colores
+                  se me ocurrió la idea de generar un color aleatorio (generando un valor para el rojo, otro para el azul y otro para el verde).
+                  Con esto, el juego consiste en generar un codigo RGB aleatorio, que será mostrado al jugador en dicho formato, debajo se mostrarán
+                  una serie de recuadros de diferentes colores, uno de estos estando compuesto por el codigo RGB mostrado anteriormente.
+                  El jugador deberá elegir entre los distintos colores procurando adivinar el correcto, o descartando las opciones erróneas a medida que se van pulsando.
+                  El objetivo del juego es conseguir un maximo de 10 puntos, pero hay que tener cuidado con tantear y generar errores! ya que si se acumulan un máximo de 10 errores
+                  se dará por terminado el juego.
+                  Espero que se diviertan... ¡Mucha suerte!.
+              </p>
+            </div>
+          </div>
+
+          <p style="margin-top: 30px; margin-bottom: 30px; text-align: center;"><a class="btn btn-secondary" [routerLink]="['/juegos/colores']" role="button">¡Probá mi juego! &raquo;</a></p>
+
+          <hr>
+      </div> <!-- /container -->
+
+    </main>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../../../dist/js/bootstrap.min.js"></script>
+  </body>
