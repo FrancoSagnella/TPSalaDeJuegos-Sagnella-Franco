@@ -15,6 +15,8 @@ import { FormsModule } from '@angular/forms';
 import { ChatComponent } from './chat/chat.component';
 import { QuienSoyComponent } from './quien-soy/quien-soy.component';
 
+import {HttpClientModule} from '@angular/common/http';
+
 //import { ToastrService } from 'ngx-toastr';
 
 
@@ -33,6 +35,7 @@ import { QuienSoyComponent } from './quien-soy/quien-soy.component';
     AngularFireAuthModule,
     AngularFirestoreModule,
     ToastrModule.forRoot(),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Pregunta } from '../clases/pregunta';
 import { preguntas } from '../juegos-constantes';
+import {FotosService} from '../../services/fotos.service';
 
 @Component({
   selector: 'app-preguntados',
@@ -31,7 +32,9 @@ export class PreguntadosComponent implements OnInit {
   correcta3Estilo:string='';
   correcta4Estilo:string='';
 
-  constructor() { }
+
+  foto:any;
+  constructor(private fotos:FotosService) { }
 
   ngOnInit(): void {
   }
@@ -74,6 +77,10 @@ export class PreguntadosComponent implements OnInit {
     if(this.preguntasArray.length != 0)
     {
       this.preguntaActual = this.preguntasArray?.pop();
+      this.fotos.traerFoto(this.preguntaActual.tematica).subscribe(fotoRetornada => {
+        console.info('fotoRetornada', fotoRetornada);
+        this.foto = fotoRetornada;
+      });
     }
     else
     {
