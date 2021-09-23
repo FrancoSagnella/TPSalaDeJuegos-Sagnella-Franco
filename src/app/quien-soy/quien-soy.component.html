@@ -6,14 +6,15 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <h1 class="display-3">Sobre mí</h1>
+                    <h1 class="display-3">Sobre mí:</h1>
+                    <h1 class="display-4">{{nombre}}</h1>
                     <p>Hola! Soy Franco Sagnella, tengo 19 años y soy estudiante de la carrera "Tecnicatura Universitaria en Programacion", en la Universidad Tecnologica Nacional.
                         Esta misma aplicacion forma parte de una ejercitacion práctica para la materia Laboratorio 4, en donde se presentan una serie de juegos para desafiar a los usuarios
                         y evaluar sus capacidades. Que lo disfruten!
                     </p>
                     <hr>
                     <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                        <a class="btn btn-light" href="https://github.com/FrancoSagnella" target="_blank"> GitHub personal</a>
+                        <a class="btn btn-light" href="{{github}}" target="_blank"> GitHub personal</a>
                         <a class="btn btn-light" href="https://github.com/FrancoSagnella/TPSalaDeJuegos-Sagnella-Franco" target="_blank"> Repositorio de la aplicacion</a>
                     </div>
                     <br><hr>
@@ -22,7 +23,7 @@
                     <a href="https://github.com/FrancoSagnella/TPSalaDeJuegos-Sagnella-Franco" target="_blank" ><i class="bi bi-github"></i> Repositorio de la aplicación</a> -->
                 </div>
                 <div class="col">
-                    <img class="foto" src="../../assets/franco.jpg" alt="">
+                    <img class="foto" [src]="img" alt="">
                 </div>
             </div>
         </div>
